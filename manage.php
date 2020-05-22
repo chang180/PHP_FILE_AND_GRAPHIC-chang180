@@ -24,50 +24,51 @@ include_once "base.php";
 </head>
 
 <body class="bg-dark text-white container">
-    <div class="flex-column align-items-center justify-content-center">
+    <div class="form justify-content-center">
         <h1 class="h1 header text-center">檔案管理練習</h1>
         <!----建立上傳檔案表單及相關的檔案資訊存入資料表機制----->
-        <form class="form border p-3 d-flex flex-column justify-content-center" action="save_file.php" method="post" enctype="multipart/form-data">
-        <input class="form-control-file" type="file" name="upload" id="img">
-        <input class="form-control my-2" type="text" name='note'>
-        <input class="form-control" type="submit" value="上傳">
-    </form>
+        <form class="form border p-3 justify-content-center" action="save_file.php" method="post" enctype="multipart/form-data">
+            <input class="form-control-file" type="file" name="upload" id="img">
+            <input class="form-control my-2" type="text" name='note'>
+            <input class="form-control my-2" type="text" name='album'>
+            <input class="form-control" type="submit" value="上傳">
+        </form>
+    </div>
 
     <!----透過資料表來顯示檔案的資訊，並可對檔案執行更新或刪除的工作----->
-        <table class="table text-white border rounded-lg">
+    <table class="table text-white border rounded-lg">
+        <tr>
+            <td>預覽</td>
+            <td>檔名</td>
+            <td>路徑</td>
+            <td>類別</td>
+            <td>說明</td>
+            <td>上傳時間</td>
+            <td>操作</td>
+        </tr>
+        <?php
+        $all = all('file_info');
+        foreach ($all as $row) {
+        ?>
             <tr>
-                <td>預覽</td>
-                <td>檔名</td>
-                <td>路徑</td>
-                <td>類別</td>
-                <td>說明</td>
-                <td>上傳時間</td>
-                <td>操作</td>
-            </tr>
-            <?php
-            $all = all('file_info');
-            foreach ($all as $row) {
-            ?>
-                <tr>
-                    <td><img src='<?= $row['path']; ?>' style="width:200px;height:100px;"></td>
-                    <td><?= $row['filename']; ?></td>
-                    <td><?= $row['path']; ?></td>
-                    <td><?= $row['type']; ?></td>
-                    <td><?= $row['note']; ?></td>
-                    <td><?= $row['upload_time']; ?></td>
-                    <td>
-                        <div class="btn-group">
-                    <a class="btn btn-outline-info rounded-pill" href="del_file.php?id=<?=$row['id'];?>">刪除</a>
-                    <a class="btn btn-outline-info rounded-pill" href="update_file.php?id=<?=$row['id'];?>">更新</a>
+                <td><img src='<?= $row['path']; ?>' style="width:200px;height:100px;"></td>
+                <td><?= $row['filename']; ?></td>
+                <td><?= $row['path']; ?></td>
+                <td><?= $row['type']; ?></td>
+                <td><?= $row['note']; ?></td>
+                <td><?= $row['upload_time']; ?></td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-outline-info rounded-pill" href="del_file.php?id=<?= $row['id']; ?>">刪除</a>
+                        <a class="btn btn-outline-info rounded-pill" href="update_file.php?id=<?= $row['id']; ?>">更新</a>
                     </div>
                     <a href=""></a>
-                    </td>
-                </tr>
-                <?php
-            }
-            ?>
-            </table>
-    </div>
+                </td>
+            </tr>
+        <?php
+        }
+        ?>
+    </table>
 
 
 

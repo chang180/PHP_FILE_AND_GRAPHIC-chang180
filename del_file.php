@@ -2,6 +2,7 @@
 
 include_once "base.php";
 
+
 // $id=$_GET['id'];
 $file=find("file_info",$_GET['id']);
 

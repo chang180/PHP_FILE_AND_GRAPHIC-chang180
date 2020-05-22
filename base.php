@@ -19,10 +19,10 @@ function all($table, ...$arg)
     return $pdo->query($sql)->fetchAll();
 }
 
-function find($table, ...$arg)
+function find($table, $arg)
 {
     global $pdo;
-    $sql = "SELECT * FROM $table";
+    $sql = "SELECT * FROM $table ";
 
 
     if (is_array($arg)) {
@@ -33,7 +33,7 @@ function find($table, ...$arg)
     } else {
         $sql = $sql . " WHERE id='" . $arg . "'";
     }
-    return $pdo->query($sql)->fetch();
+    return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
 
 function nums($table, ...$arg)
@@ -65,9 +65,10 @@ function save($table, $arg)
         $sql = "UPDATE $table SET " . implode(",", $tmp) . " WHERE id='" . $arg['id'] . "'";
     } else {
         //insert
-        $sql = "INSERT INTO $table (`" . implode("`,`", array_keys($arg)) . "`) VALUES('" . implode("','") . "')";
+        $sql = "INSERT INTO $table (`" . implode("`,`", array_keys($arg)) . "`) VALUES('" . implode("','", $arg)  . "')";
+        // echo $sql;
     }
-    return $pdo - exec($sql);
+    return $pdo->exec($sql);
 }
 
 function del($table, $arg)
@@ -87,10 +88,10 @@ function del($table, $arg)
     return $pdo->exec($sql);
 }
 
-function q($table, $arg)
+function q($sql)
 {
     global $pdo;
-    return $pdo->query($arg)->fetchAll();
+    return $pdo->query($sql)->fetchAll();
 }
 
 function to($url)

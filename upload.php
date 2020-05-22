@@ -32,7 +32,7 @@
         <!----建立你的表單及設定編碼----->
         <form class="form border p-3 d-flex flex-column justify-content-center" action="catch_file.php" method="post" enctype="multipart/form-data">
             <input class="form-control-file" type="file" name="upload" id="img">
-            <input class="form-control my-2" type="text" name='desc'>
+            <input class="form-control my-2" type="text" name='note'>
             <input class="form-control" type="submit" value="上傳">
         </form>
     </div>

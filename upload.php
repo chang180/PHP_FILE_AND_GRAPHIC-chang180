@@ -27,33 +27,35 @@
 </style>
 
 <body>
-    <div class="flex-column align-items-center justify-content-center">
-        <h1 class="header text-center">檔案上傳練習</h1>
-        <!----建立你的表單及設定編碼----->
-        <form class="form border p-3 d-flex flex-column justify-content-center" action="catch_file.php" method="post" enctype="multipart/form-data">
-            <input class="form-control-file" type="file" name="upload" id="img">
-            <input class="form-control my-2" type="text" name='note'>
-            <input class="form-control" type="submit" value="上傳">
-        </form>
+    <div class="container">
+        <div class="flex-column align-items-center justify-content-center">
+            <h1 class="header text-center">檔案上傳練習</h1>
+            <!----建立你的表單及設定編碼----->
+            <form class="form border p-3 d-flex flex-column justify-content-center rounded-lg" action="catch_file.php" method="post" enctype="multipart/form-data">
+                <input class="form-control-file" type="file" name="upload" id="img">
+                <input class="form-control my-2" type="text" name='note'>
+                <input class="btn btn-outline-success" type="submit" value="上傳">
+            </form>
+        </div>
+
+
+
+
+        <!----建立一個連結來查看上傳後的圖檔---->
+
+        <?php
+
+        if (!empty($_GET['filename'])) {
+            $name = $_GET['filename'];
+        ?>
+            <!-- 可避免標籤出現在網頁原始碼，以免目錄被看到 -->
+            <img src="imgs/<?= $name; ?>" alt="" style="width:200px;height:300px;">
+        <?php
+        } else {
+            $name = "";
+        }
+        ?>
     </div>
-
-
-
-
-    <!----建立一個連結來查看上傳後的圖檔---->
-
-    <?php
-
-    if (!empty($_GET['filename'])) {
-        $name = $_GET['filename'];
-    ?>
-    <!-- 可避免標籤出現在網頁原始碼，以免目錄被看到 -->
-        <img src="imgs/<?= $name; ?>" alt="" style="width:200px;height:300px;">
-    <?php
-    } else {
-        $name = "";
-    }
-    ?>
 
 
 </body>

@@ -13,21 +13,31 @@
     <!-- <link rel="stylesheet" href="custom.css" type="Text"> -->
 
     <!-- 標題列圖示 -->
-    <link rel="shortcut icon" href="imgs/favicon1.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/favicon.ico" type="image/x-icon">
 
         <!-- Google Fonts: -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- Fontawesome: -->
     <script src="https://kit.fontawesome.com/e124ffab93.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            font-family: '微軟正黑體', sans-serif;
+            min-width: 600px;
+            background:#eee;
+            margin:auto;
+        }
+    </style>
 </head>
 <body>
-    <main class="container btn-group d-flex flex-column align-items-center justify-content-center m-4">
-        <a href="upload.php"><div class="btn border rounded-pill shadow-lg m-2">表單檔案上傳</div></a>
-        <a href="manage.php"><div class="btn border rounded-pill shadow-lg m-2">檔案管理</div></a>
-        <a href="text-import.php"><div class="btn border rounded-pill shadow-lg m-2">文字檔案處理</div></a>
-        <a href="image.php"><div class="btn border rounded-pill shadow-lg m-2">圖形處理</div></a>
-    </main>
+    <div class="container d-flex justify-content-center">
+        <div class="btn-group-vertical">
+        <a href="upload.php" class="btn btn-lg btn-outline-primary border rounded-pill m-2">表單檔案上傳</></a>
+        <a href="manage.php" class="btn btn-lg btn-outline-primary border rounded-pill m-2">檔案管理</></a>
+        <a href="text-import.php" class="btn btn-lg btn-outline-primary border rounded-pill m-2">文字檔案處理</></a>
+        <a href="image.php" class="btn btn-lg btn-outline-primary border rounded-pill m-2">圖形處理</></a>
+        </div>
+    </div>
     
     
     <!-- jQuery&Bootstrap JS -->

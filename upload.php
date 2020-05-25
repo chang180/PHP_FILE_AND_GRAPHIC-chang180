@@ -33,7 +33,10 @@
             <!----建立你的表單及設定編碼----->
             <form class="form border p-3 d-flex flex-column justify-content-center rounded-lg" action="catch_file.php" method="post" enctype="multipart/form-data">
                 <input class="form-control-file" type="file" name="upload" id="img">
-                <input class="form-control my-2" type="text" name='note'>
+                <div class="row my-2">
+                    <label class="form-control col-3" for="note">檔案說明：</label>
+                    <input class="form-control col-9" type="text" name='note'>
+                </div>
                 <input class="btn btn-outline-success" type="submit" value="上傳">
             </form>
         </div>
@@ -55,7 +58,9 @@
             $name = "";
         }
         ?>
+    <a class="btn btn-outline-primary mt-3" href="index.php">回首頁</a>
     </div>
+
 
 
 </body>

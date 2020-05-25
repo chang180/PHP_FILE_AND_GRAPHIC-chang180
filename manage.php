@@ -36,7 +36,7 @@ include_once "base.php";
     </div>
 
     <!----透過資料表來顯示檔案的資訊，並可對檔案執行更新或刪除的工作----->
-    <table class="table text-white border rounded-lg">
+    <table class="table table-responsive text-white border rounded-lg">
         <tr>
             <td>預覽</td>
             <td>檔名</td>
@@ -59,8 +59,8 @@ include_once "base.php";
                 <td><?= $row['upload_time']; ?></td>
                 <td>
                     <div class="btn-group">
-                        <a class="btn btn-outline-info rounded-pill" href="del_file.php?id=<?= $row['id']; ?>">刪除</a>
-                        <a class="btn btn-outline-info rounded-pill" href="update_file.php?id=<?= $row['id']; ?>">更新</a>
+                        <a class="btn btn-outline-info rounded-pill text-nowrap" href="del_file.php?id=<?= $row['id']; ?>">刪除</a>
+                        <a class="btn btn-outline-info rounded-pill text-nowrap" href="update_file.php?id=<?= $row['id']; ?>">更新</a>
                     </div>
                     <a href=""></a>
                 </td>
@@ -69,6 +69,8 @@ include_once "base.php";
         }
         ?>
     </table>
+    <a class="btn btn-outline-primary" href="index.php">回首頁</a>
+
 
 
 

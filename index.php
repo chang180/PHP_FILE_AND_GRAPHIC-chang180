@@ -20,13 +20,9 @@
 
     <!-- Fontawesome: -->
     <script src="https://kit.fontawesome.com/e124ffab93.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
     <style>
-        body{
-            font-family: '微軟正黑體', sans-serif;
-            min-width: 600px;
-            background:#eee;
-            margin:auto;
-        }
     </style>
 </head>
 <body>

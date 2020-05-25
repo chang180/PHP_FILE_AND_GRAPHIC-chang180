@@ -28,15 +28,14 @@
 <body class="container">
     <h1 class="header">圖形處理練習</h1>
     <!---建立檔案上傳機制--->
-    <form class="form" action="graphic.php" method="post" enctype="multipart/form-data">
+    <form class="form" action="graphic2.php" method="post" enctype="multipart/form-data">
         <input class="form-control" type="file" name="pic"><br>
         <input class="form-control" type="text" name="note"><br>
         <input class="form-control" type="text" name="album"><br>
         <input class="form-control" type="submit" value="上傳">
     </form>
 
-    <a class="btn btn-outline-success my-3" href="album.php">查看相簿</a><br>
-    <a class="btn btn-outline-success my-3" href="album2.php">查看相簿2</a><br>
+    <a class="btn btn-outline-success my-3" href="album2.php">查看相簿</a><br>
 
     <!----縮放圖形----->
 

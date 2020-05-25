@@ -16,8 +16,8 @@
         width:80vw;
     }
     .frame {
-        width:20vw;
-        height:20vh;
+        /* width:20vw;
+        height:20vh; */
         border:1px 1px 5px #990;
         margin:10px;
         vertical-align: middle;
@@ -46,7 +46,8 @@ $image = all("file_info",$album);
 // var_dump($image);
 
 foreach ($image as $img) {
-    echo "<div class='frame'><img src='" . $img['path'] . "'></div>";
+    // 至此必須課後再參考老師的範例檔案了
+    // echo "<div class='frame'><a href='img/'<img src='thumb/" . $img['filename'] . "'></a></div>";
 }
 echo "</div>"
 ?>

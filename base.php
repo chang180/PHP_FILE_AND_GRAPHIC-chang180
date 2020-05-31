@@ -17,7 +17,13 @@ function all($table, ...$arg)
     if (!empty($arg[1])) {
         $sql = $sql . $arg[1];
     }
-    return $pdo->query($sql)->fetchAll();
+    if(!empty($arg[2])){
+
+        return $pdo->query($sql)->fetchAll($arg[2]);
+    }else{
+        return $pdo->query($sql)->fetchAll();
+
+    }
 }
 
 function find($table, $arg)

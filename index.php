@@ -21,6 +21,8 @@
 
     <!-- Fontawesome: -->
     <script src="https://kit.fontawesome.com/e124ffab93.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
     <style>
         body{
             font-family: '微軟正黑體', sans-serif;

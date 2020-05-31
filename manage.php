@@ -128,6 +128,42 @@ include_once "base.php";
                                     </div>
                                 </div>
                             </div>
+    <!----透過資料表來顯示檔案的資訊，並可對檔案執行更新或刪除的工作----->
+    <table class="table table-responsive text-white border rounded-lg">
+        <tr>
+            <td>預覽</td>
+            <td>檔名</td>
+            <td>路徑</td>
+            <td>類別</td>
+            <td>說明</td>
+            <td>上傳時間</td>
+            <td>操作</td>
+        </tr>
+        <?php
+        $all = all('file_info');
+        foreach ($all as $row) {
+        ?>
+            <tr>
+                <td><img src='<?= $row['path']; ?>' style="width:200px;height:100px;"></td>
+                <td><?= $row['filename']; ?></td>
+                <td><?= $row['path']; ?></td>
+                <td><?= $row['type']; ?></td>
+                <td><?= $row['note']; ?></td>
+                <td><?= $row['upload_time']; ?></td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-outline-info rounded-pill text-nowrap" href="del_file.php?id=<?= $row['id']; ?>">刪除</a>
+                        <a class="btn btn-outline-info rounded-pill text-nowrap" href="update_file.php?id=<?= $row['id']; ?>">更新</a>
+                    </div>
+                    <a href=""></a>
+                </td>
+            </tr>
+        <?php
+        }
+        ?>
+    </table>
+    <a class="btn btn-outline-primary" href="index.php">回首頁</a>
+
 
 
                         </div>

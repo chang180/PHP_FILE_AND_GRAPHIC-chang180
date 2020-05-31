@@ -21,6 +21,8 @@ if ($_FILES['upload']['error'] == 0) {
         case "image/gif":
             $sub = '.gif';
             break;
+        default:
+        header("location:upload.php");
     }
 
     //$sub=explode('.',$_FILES['upload']['name']);

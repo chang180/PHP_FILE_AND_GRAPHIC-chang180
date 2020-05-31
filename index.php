@@ -1,3 +1,4 @@
+<?php include_once "base.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,17 +26,17 @@
             font-family: '微軟正黑體', sans-serif;
             min-width: 600px;
             background:#eee;
-            margin:auto;
+            /* margin:auto; */
         }
     </style>
 </head>
 <body>
     <div class="container d-flex justify-content-center">
         <div class="btn-group-vertical">
-        <a href="upload.php" class="btn btn-lg btn-outline-primary border rounded-pill m-2">表單檔案上傳</></a>
-        <a href="manage.php" class="btn btn-lg btn-outline-primary border rounded-pill m-2">檔案管理</></a>
-        <a href="text-import.php" class="btn btn-lg btn-outline-primary border rounded-pill m-2">文字檔案處理</></a>
-        <a href="image.php" class="btn btn-lg btn-outline-primary border rounded-pill m-2">圖形處理</></a>
+        <a href="upload.php" class="btn btn-lg btn-outline-primary border-success rounded-pill m-2">表單檔案上傳</></a>
+        <a href="manage.php" class="btn btn-lg btn-outline-primary border-info rounded-pill m-2">檔案管理</></a>
+        <a href="text-import.php" class="btn btn-lg btn-outline-primary border-danger rounded-pill m-2">文字檔案處理</></a>
+        <a href="image.php" class="btn btn-lg btn-outline-primary border-warning rounded-pill m-2">圖形處理</></a>
         </div>
     </div>
     

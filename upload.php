@@ -6,7 +6,7 @@
  * 3.搬移檔案
  * 4.顯示檔案列表
  */
-
+include_once "base.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,14 +28,19 @@
 
 <body>
     <div class="container">
-        <div class="flex-column align-items-center justify-content-center">
+        <div class="form-group">
             <h1 class="header text-center">檔案上傳練習</h1>
             <!----建立你的表單及設定編碼----->
-            <form class="form border p-3 d-flex flex-column justify-content-center rounded-lg" action="catch_file.php" method="post" enctype="multipart/form-data">
+            <!-- 標籤屬性enctype="multipart/form-data"必須自己記住 -->
+            <form class="form-group" action="catch_file.php" method="post" enctype="multipart/form-data"> 
                 <input class="form-control-file" type="file" name="upload" id="img">
-                <input class="form-control my-2" type="text" name='note'>
+                <div class="input-group my-2">
+                <label class="form-control col-3" for="note">檔案說明:</label>
+                <input class="form-control col-9" type="text" name='note'>
+                </div>
                 <input class="btn btn-outline-success" type="submit" value="上傳">
             </form>
+            <a href="index.php" class="btn btn-lg btn-outline-primary border-success rounded-pill m-2">回首頁</></a>
         </div>
 
 
@@ -49,7 +54,7 @@
             $name = $_GET['filename'];
         ?>
             <!-- 可避免標籤出現在網頁原始碼，以免目錄被看到 -->
-            <img src="imgs/<?= $name; ?>" alt="" style="width:200px;height:300px;">
+            <img class="img-thumbnail rounded-lg shadow" src="imgs/<?= $name; ?>" alt="" style="width:200px;height:300px;">
         <?php
         } else {
             $name = "";
